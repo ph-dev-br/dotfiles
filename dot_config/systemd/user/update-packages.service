@@ -1,0 +1,12 @@
+[Unit]
+Description=Update Packages Serice
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=oneshot
+ExecStart=%h/.local/bin/update-packages
+TimeoutStartSec=3600
+
+[Install]
+WantedBy=default.target
