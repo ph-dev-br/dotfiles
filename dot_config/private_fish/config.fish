@@ -23,7 +23,9 @@ if [ "$(command -v ug)" ]
 end
 
 # bat for cat
-alias cat='bat --style=plain --pager=never' 2>/dev/null
+if [ "$(command -v bat)" ]
+    alias cat='bat --style=plain --pager=never'
+end
 
 if status is-interactive
     [ "$(command -v atuin)" ] && eval "$(atuin init fish $ATUIN_INIT_FLAGS)"
